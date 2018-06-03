@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于你</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="src/css/index.css"/>
+    <script type="text/javascript">
+        window.onload=function(){
+            var fz=document.documentElement.clientWidth/20;
+            document.getElementsByTagName("html")[0].style.fontSize=fz+"px";
+        }
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+<header id="header"></header>
+<div class="loader">
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
+<script src="src/components/loding.js"></script>
+<script src="src/javascript/data.js"></script>
+<script>
+    $("#header").loading();
+</script>
+</body>
+</html>

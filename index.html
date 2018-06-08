@@ -5,6 +5,9 @@
     <title>关于你</title>
     <meta name="viewport" content="width=device-width,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="src/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="src/css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="src/css/public.css"/>
+    <link rel="icon" sizes="any" href="favicon.ico">
     <script type="text/javascript">
         window.onload=function(){
             var fz=document.documentElement.clientWidth/20;
@@ -16,30 +19,18 @@
 
 </head>
 <body>
-<header id="header"></header>
-<div class="loader">
-    <div class="loader-inner">
-        <div class="loader-line-wrap">
-            <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-            <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-            <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-            <div class="loader-line"></div>
-        </div>
-        <div class="loader-line-wrap">
-            <div class="loader-line"></div>
-        </div>
+<header id="header" style="display: none"></header>
+<div id="content">
+    <div class="blur protective"></div>
+    <div class="record_box">
+        <ul name="itme_list"></ul>
     </div>
 </div>
 <script src="src/components/loding.js"></script>
 <script src="src/javascript/data.js"></script>
+<script src="src/javascript/index.js"></script>
 <script>
-    $("#header").loading();
+    index.init( data );
 </script>
 </body>
 </html>

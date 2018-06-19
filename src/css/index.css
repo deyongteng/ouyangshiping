@@ -118,3 +118,73 @@ li {
 #content .record_box ul li.last .left_liner span:nth-child(1) {
   height: 50%;
 }
+#content .content2 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: -100%;
+  top: 0;
+  z-index: 14;
+  background: #ebe9f0;
+  transition: 0.3s;
+}
+#content .content2.active {
+  right: 0;
+}
+#content .content2 .header {
+  width: 100%;
+  height: 2.5rem;
+  background: #ebe9f0;
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: 0rem 0.25rem 0.625rem rgba(0, 0, 0, 0.4);
+}
+#content .content2 .header .return {
+  display: inline-block;
+  width: 3.75rem;
+  height: 100%;
+  background: url("../images/icon/return.png") no-repeat 0 center;
+  background-size: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#content .content2 .header .time {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 2.5rem;
+  font-size: 1.25rem;
+}
+#content .content2 .message_content {
+  width: 100%;
+  height: 97.5%;
+  overflow: auto;
+  position: relative;
+}
+#content .content2 .message_content .bg {
+  width: 100%;
+  height: 100%;
+  background: url("../images/bg/message_bg2.jpg") no-repeat;
+  background-size: 100%;
+}
+#content .content2 .message_content .text_content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  z-index: 20;
+  padding: 0.625rem;
+  box-sizing: border-box;
+}
+#content .content2 .message_content .text_content p {
+  font-size: 1.125rem;
+  text-shadow: 0 0.075rem 0.1875rem rgba(255, 255, 255, 0.8);
+  color: #fff;
+  padding-bottom: 1.25rem;
+}

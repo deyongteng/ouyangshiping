@@ -141,7 +141,7 @@ var index = {
 
     },
 
-    audioAutoPlay: function () {
+    audioAutoPlay: function(){
 
         var audio = document.getElementById('audio');
         document.addEventListener("WeixinJSBridgeReady", function () {
@@ -149,7 +149,7 @@ var index = {
         }, false);
         document.addEventListener('YixinJSBridgeReady', function () {
             audio.play();
-        },false);
+        }, false);
     }
 
 }

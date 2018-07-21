@@ -20,7 +20,6 @@ var index = {
         }
 
 
-
         this.element = $("#content");
         this._data = data;
         this.binEvent();
@@ -88,6 +87,8 @@ var index = {
                 setTimeout(function () {
                     _this.element.find(".startPage").remove();
                     _this.setHtml();
+                    console.log("开发播放音乐")
+                    document.getElementById("audio").play()
                 },200)
             },2000)
         })

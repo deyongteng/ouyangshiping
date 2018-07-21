@@ -2,9 +2,27 @@ var index = {
     element: null,
     _data: null,
     init: function ( data ) {
+        var _this = this;
+        $.showLoding()
+
+        var nub = 0;
+        for (var i = 0; i < lodingImag.length; i++) {
+            var img=new Image();
+            img.src=lodingImag[i];
+            img.onload=function(){
+                nub++;
+                // logoText.innerHTML="已加载"+(Math.floor(nub/lodingImag.length*100))+"%";
+                if(nub===lodingImag.length){
+                    _this.startPage();
+                    $.hideLoding();
+                }
+            }
+        }
+
+
+
         this.element = $("#content");
         this._data = data;
-        this.setHtml();
         this.binEvent();
     },
     setHtml: function () {
@@ -54,17 +72,70 @@ var index = {
         this.element.find(".return").off("click").on("click",function () {
             $(".content2").removeClass("active");
         });
+
+        var off = true;
+        this.element.find(".startPage").off("touchend").on("touchend",function () {
+            _this.element.find(".startPage").find("p").addClass("hide");
+            var itmeL = _this.element.find(".itme");
+            for( var i=0,l=itmeL.length; i<l; i++){
+                itmeL.eq(i).css("transform",'translateZ('+Math.random()*6000+'px) rotateY('+ +Math.random()*360+'deg) rotateX('+Math.random()*360+'deg)');
+            }
+
+            if( !off ){return}
+            setTimeout(function () {
+                _this.element.find(".startPage").addClass("active");
+
+                setTimeout(function () {
+                    _this.element.find(".startPage").remove();
+                    _this.setHtml();
+                },200)
+            },2000)
+        })
+
     },
 
     setContent: function ( data ) {
 
         var data = data || '';
+        var html = '';
+        var imgUrl = data.itme.imgUrl;
         var $content2 = $(".content2");
         var text = "&nbsp;&nbsp;&nbsp;&nbsp;"+data.itme.content+"</br>我们的故事还在继续～";
 
+        for( var i=0,l=imgUrl.length; i<l; i++ ){
+            html += '<img src="'+ imgUrl[i] +'" style="left:'+ (Math.random()*200*(i=0?100:i)) +'px;top:'+ (Math.random()*200*(i=0?1:i)) +'px;transform:rotate('+ Math.random()*50 +'deg)"/>'
+        }
         $content2.addClass("active");
         $content2.find(".time").text( data.itme.time );
-        $content2.find(".text_content p").html( text )
+        $content2.find(".text_content p").html( text );
+        $content2.find(".img_box").html( html );
+
+    },
+
+    startPage: function () {
+
+        var windowW = $(window).width();
+        var number = Math.ceil($(window).width()/6);
+        var itmeL;
+        var html = '';
+        for (var j = 0; j < 36; j++) {
+
+            html+="<div class='itme' style='width:"+ number +"px;height:"+ number +"px;left:"+number*(j%6)+"px;top:"+number*(Math.floor(j/6))+"px;'></div>";
+        }
+
+        this.element.find(".bg_box").css({width:windowW+"px",height:windowW+"px"});
+        this.element.find(".bg_box").html(html);
+
+        itmeL = this.element.find(".itme");
+
+        for (var i = 0; i < itmeL.length; i++) {
+            itmeL.eq(i).css({
+                "background-positionX": -number*(i%6)+"px",
+                "background-positionY": -number*(Math.floor(i/6))+"px",
+                "background-size": windowW+"px"
+            });
+
+        }
 
     }
 }

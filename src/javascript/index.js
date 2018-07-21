@@ -88,7 +88,8 @@ var index = {
                     _this.element.find(".startPage").remove();
                     _this.setHtml();
                     console.log("开发播放音乐")
-                    document.getElementById("audio").play()
+                    document.getElementById("audio").play();
+                    _this.audioAutoPlay();
                 },200)
             },2000)
         })
@@ -138,5 +139,17 @@ var index = {
 
         }
 
+    },
+
+    audioAutoPlay: function () {
+
+        var audio = document.getElementById('audio');
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function () {
+            audio.play();
+        },false);
     }
+
 }

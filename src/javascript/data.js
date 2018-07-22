@@ -481,8 +481,8 @@ var data = [
     {
         itme: {
             time: '7月22号',
-            content: ' 结束了～',
-            imgUrl: []
+            content: ' 结束～',
+            imgUrl: ['src/images/7-22.jpg']
         }
     }
 ]
@@ -506,6 +506,7 @@ var lodingImag = [
     'src/images/6-22.jpg',
     'src/images/6-25.jpg',
     'src/images/7-4.jpg',
+    'src/images/7-22.jpg',
     'src/images/bg/bg.jpg',
     'src/images/bg/message_bg.jpg',
     'src/images/bg/message_bg2.jpg',

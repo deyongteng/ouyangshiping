@@ -87,7 +87,6 @@ var index = {
                 setTimeout(function () {
                     _this.element.find(".startPage").remove();
                     _this.setHtml();
-                    console.log("开发播放音乐")
                     document.getElementById("audio").play();
                     _this.audioAutoPlay();
                 },200)
@@ -102,7 +101,7 @@ var index = {
         var html = '';
         var imgUrl = data.itme.imgUrl;
         var $content2 = $(".content2");
-        var text = "&nbsp;&nbsp;&nbsp;&nbsp;"+data.itme.content+"</br>我们的故事还在继续～";
+        var text = "&nbsp;&nbsp;&nbsp;&nbsp;"+data.itme.content+"</br>"+ (data.itme.time =='7月22号'?'' : '我们的故事还在继续～') +"";
 
         for( var i=0,l=imgUrl.length; i<l; i++ ){
             html += '<img src="'+ imgUrl[i] +'" style="left:'+ (Math.random()*200*(i=0?100:i)) +'px;top:'+ (Math.random()*200*(i=0?1:i)) +'px;transform:rotate('+ Math.random()*50 +'deg)"/>'

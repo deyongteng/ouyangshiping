@@ -24,6 +24,7 @@ var index = {
         this.binEvent();
         this.bgCanvas();
     },
+
     setHtml: function () {
         var itmeArr = this._data;
         var html = "",time,content;
@@ -105,7 +106,7 @@ var index = {
         var text = "<p>&nbsp;&nbsp;&nbsp;&nbsp;"+data.itme.content+"</br>"+ (data.itme.time =='7月22号'?'' : '我们的故事还在继续～') +"</p>";
 
         for( var i=0,l=imgUrl.length; i<l; i++ ){
-            html += '<img src="'+ imgUrl[i] +'" style="left:'+ (Math.random()*200*(i==0?20:i)) +'px;top:'+ (Math.random()*300*(i==0?1:i)) +'px;transform:rotate('+ Math.random()*50 +'deg)"/>'
+            html += '<img src="'+ imgUrl[i] +'" style="left:'+ (Math.random()*(i==0?20:i)) +'px;top:'+ (Math.random()*300*(i==0?1:i)) +'px;transform:rotate('+ Math.random()*50 +'deg)"/>'
         }
         $content2.addClass("active");
         $content2.find(".time").text( data.itme.time );
@@ -388,5 +389,4 @@ var index = {
             }
         })(jQuery);
     }
-
 }

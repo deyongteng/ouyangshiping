@@ -89,8 +89,8 @@ var index = {
                 setTimeout(function () {
                     _this.element.find(".startPage").remove();
                     _this.setHtml();
-                    // document.getElementById("audio").play();
-                    // _this.audioAutoPlay();
+                    document.getElementById("audio").play();
+                    _this.audioAutoPlay();
                 },200)
             },2000)
         })
